@@ -43,7 +43,7 @@ const questions = [
 
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
-const nextButton = document.getElementById("next-btn");
+const nextButton = document.getElementById("next-btn1");
 
 
 let currentQuestionIndex = 0;
@@ -66,7 +66,7 @@ function showQuestion()
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button");
         button.innerHTML = answer.text;
-        button.classList.add("btn");
+        button.classList.add("btn1");
         answerButtons.appendChild(button);
 
         if(answer.correct)
@@ -87,16 +87,16 @@ function resetState(){
 }
 
 function selectAnswer(e){
-    const selectedBtn = e.target;
-    const isCorrect = selectedBtn.dataset.correct === "true";
+    const selectedbtn1 = e.target;
+    const isCorrect = selectedbtn1.dataset.correct === "true";
     if(isCorrect)
     {
-        selectedBtn.classList.add("correct");
+        selectedbtn1.classList.add("correct");
         score++;
     }
 
     else{
-        selectedBtn.classList.add("incorrect");
+        selectedbtn1.classList.add("incorrect");
     }
     Array.from(answerButtons.children).forEach(button => {
         if(button.dataset.correct === "true"){
